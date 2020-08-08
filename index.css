@@ -1,64 +1,57 @@
-body{
-    margin:5%,
-    font-family: 'Gill Sans','Gill Sans MT';
-    display:grid;
+body {
+    margin: 5%;
+    font-family: 'Gill Sans', 'Gill Sans MT';
+    display: grid;
     justify-content: center;
 }
-.title{
-    color:#16697A;
-    text-align:center;
-    margin: auto auto 1em;
+
+.title {
+    color: #16697A;
+    text-align: center;
+    margin-bottom: 1em;
 }
 
-.entry-textbox{
+.entry-textbox {
     background-color: #FFA62B;
-    width:20em;
-    height:10em;
+    width: 20em;
+    height: 10em;
+    padding: 1em;
     margin-bottom: 0.5em;
-    padding:2em;
-    border:unset;
-    border-radius:25px;
-    outline: none;
+    border: unset;
+    border-radius: 25px;
 }
-/*
-    - Give the entries section the background color, #16697A
-      (or any other color of your choice)
-    - Give it the text color, #EDE7E3
-      (if you used your own color, this should be something that is visible
-       on the background)
-    - Like we did before, give it rounded edges.*/
-#entries{
-    background-color: #16697A;
-    color:#EDE7E3;
-    padding:2em;
+
+.entry-textbox:focus {
+    outline: none;
+    box-shadow: 0px 0px 2px #000;
+}
+
+#entryForm .button {
+    border: unset;
+    border-radius: 25px;
+    padding: 5px 16px;
+    margin-left: 76%;
+}
+
+#entries {
+    background: #16697A;
+    color: #EDE7E3;
+    font-family: cursive;
+    padding: 2em;
     max-width: 20em;
+    border: unset;
     border-radius: 25px;
     margin-top: 1em;
-    font-family: cursive;
-}
-#entryForm .button{
-    border:unset;
-    border-radius: 25px;
-    padding:5px 16px;
-    margin-left:75%;
 }
 
-/*
-   - Target the div for the display-entry buttons and give it a
-       bottom padding of 1em to separate it from the entry texts
-   - Target the display-entry buttons and give each of them a margin
-       of 0.2em to separate them from one another
-   - Use the hover pseudo-class to change the cursor on the
-       display-entry buttons to "pointer" whenever they are hovered on
-*/
-.entries-nav{
+.entries-nav {
     padding-bottom: 1em;
-
 }
 
-.display-entry-button{
-    margin:0.2em;
+.display-entry-button {
+    margin: 0.2em;
 }
-.display-entry-button:hover{
+
+.display-entry-button:hover {
     cursor: pointer;
 }

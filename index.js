@@ -1,54 +1,80 @@
 const entryForm = document.querySelector("#entryForm")
 const entrySection = document.querySelector("#entries")
 const entryTextbox = document.querySelector('.entry-textbox')
-const entriesNav = document.querySelector('.entries-nav')
+const entriesNav = document.querySelector('.entries-nav');
 
-let entryCount  = 1
-function addEntryToDom(event){
+
+/*Addional code for Local storage*/
+const entryClear = document.querySelector('.clearLast')
+const entryClearAll = document.querySelector('.clearAll')
+let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) :[]
+
+let count = 1;
+
+
+/*store entries in local storage*/
+function addEntryToPage(event) {
     event.preventDefault();
-    const entryDiv = document.createElement('div');
-    entryDiv.className = 'single-entry';
-    entryDiv.innerText = entryTextbox.value;
-    entryDiv.style.display='none'
-    entrySection.appendChild(entryDiv);
+    itemsArray.push(entryTextbox.value);
+    localStorage.setItem('items', JSON.stringify(itemsArray));
     entryTextbox.value = '';
-    /*
-      - In the addEntryToDom() function, create a new variable named
-          displayEntryButton.
-      - Use the document.createElement method to create an HTML button
-          and make that the value of the new variable.
-      - Use the innerText property to set the button's inner text to "1";
-      - Append the button to the entriesNav div we created on line 4.
-    */
 
-    const displayEntryButton = document.createElement('button')
-    displayEntryButton.className = 'display-entry-button'
-    displayEntryButton.innerText = entryCount
-    entriesNav.appendChild(displayEntryButton)
-
-    /*
-     - Inside the displayEntryButton addEventListener function,
-         create a new variable named 'allEntries'.
-     - use the document.queryselectorAll method to select all
-         elements with the class of 'single-entry' and make that the
-         value of the new allEntries variable.
-   */
-
-    /*
-  - Add a click event listener to the displayEntryButton.
-  - Set the display property of the entryDiv to 'block' whenever
-      it's clicked.
-*/
-    displayEntryButton.addEventListener('click',function(){
-        var allEntries = document.querySelectorAll('.single-entry')
-        for (var i = 0; i<allEntries.length;i++){
-            allEntries[i].style.display = 'none'
-        }
-
-        entryDiv.style.display = 'block'
-    })
-    entryCount += 1
 
 }
 
-entryForm.addEventListener('submit',addEntryToDom)
+
+function modifyDom(){
+    let data = JSON.parse((localStorage.getItem('items')))
+    data.forEach((item) => {
+        const entryDiv = document.createElement('div');
+        entryDiv.className = 'single-entry';
+        entryDiv.innerText = item;
+        entryDiv.style.display = 'none'
+        entrySection.appendChild(entryDiv);
+    })
+
+    const displayEntryButton = document.createElement('button');
+    displayEntryButton.className = 'display-entry-button';
+    displayEntryButton.innerText = count;
+    entriesNav.appendChild(displayEntryButton);
+
+
+    displayEntryButton.addEventListener('click', function () {
+        const allEntries = document.querySelectorAll('.single-entry');
+        for (let index = 0; index < allEntries.length; index++) {
+            allEntries[index].style.display = 'none';
+        }
+        entryDiv.style.display = 'block';
+    })
+    count +=1;
+}
+
+// function addItemsToDom(){
+//     let data = JSON.parse((localStorage.getItem('items')))
+//     //entrySection.innerHTML = '';
+//     data.forEach((item) =>{
+//         const entryDiv = document.createElement('div');
+//         entryDiv.className = 'single-entry';
+//         entryDiv.innerText = item;
+//         entryDiv.style.display= 'block'
+//         entrySection.appendChild(entryDiv);
+//     })}
+
+function clearAll(){
+    localStorage.clear();
+    entrySection.innerHTML = ''
+}
+
+function clearLast(){
+    console.log('Clear Last Item')
+    let data = JSON.parse((localStorage.getItem('items')))
+    data.pop();
+    localStorage.setItem('items', JSON.stringify(data));
+
+}
+
+entryForm.addEventListener('submit',addEntryToPage)
+entryClearAll.addEventListener('submit',clearAll);
+entryClear.addEventListener('submit',clearLast)
+
+}
