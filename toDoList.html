@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Aloha! This is what I want to Accomplish Today</title>
+    <link rel="stylesheet" href="toDoList.css" type =text/css>
+</head>
+<body>
+<header class="topHeader">
+    <h1>What needs to accomplished today?</h1></header>
+</header>
+
+<section  class = 'taskEntry'>
+    <form class = 'addTaskForm' '>
+        <input class= "taskDescription" id="taskname" placeholder="What needs to be done?">
+        <button class= 'addTask' type="submit"> Add to the list</button>
+    </form>
+</section>
+
+<section class ='taskDisplay'>
+    <div class = 'taskCategory'>
+        <div class = 'taskType'>
+            <div class = "catHeader" id="todoheader"> What's Next?</div>
+            <ul class = "todolist list">
+
+            </ul>
+        </div>
+    </div>
+    <div class = 'taskCategory'>
+        <div class ='taskType'>
+            <div class = "catHeader" id ="inprogressheader"> Progress Underway</div>
+            <ul class = "inprogresslist list">
+            <ul>
+        </div>
+    </div>
+    <div class = 'taskCategory'>
+        <div class = "taskType">
+            <div class = "catHeader" id="finishedheader">Finished</div>
+            <ul class = "finishedlist list">
+
+            </ul>
+        </div>
+    </div>
+
+</section>
+
+
+
+<script src="toDoList.js"></script>
+</body>
+</html>

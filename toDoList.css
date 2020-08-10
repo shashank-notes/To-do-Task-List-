@@ -1,0 +1,87 @@
+body{
+    font-family: "Century Gothic";
+    margin:0;
+}
+
+.topHeader{
+    background-color: #383F51;
+    color:#48ACF0;
+    padding: 1em;
+    justify-content: center;
+}
+h1{
+    margin:0px;
+}
+.taskEntry{
+    background-color: #48ACF0;
+}
+.addTaskForm{
+    padding:0.5em;
+    /*margin: 0.5em;*/
+}
+.taskDescription{
+    padding:1em;
+    margin: 2em auto;
+    width:80%;
+}
+.addTask{
+    border-radius: 0px;
+    padding:1em;
+    margin: 2em auto;
+    width: 15%;
+}
+
+.taskDisplay{
+    margin: 0 auto;
+}
+
+.taskCategory {
+    float: left;
+    width: 32%;
+    padding: 8px;
+}
+.taskType{
+    margin :1em;
+    padding:0.25em;
+}
+
+.taskType:hover{
+    box-shadow: 0 8px 12px 0 gray;
+}
+
+.taskType .catHeader{
+    font-family: "Century Gothic";
+    padding:10px;
+
+}
+.taskType #todoheader{
+    background-color: #EE6C1B;
+    /*height: 25px;*/
+    border:none;
+}
+
+.taskType #inprogressheader{
+    background-color: #AA7DCE;
+    /*height: 25px;*/
+    border:none;
+
+}
+
+.taskType #finishedheader{
+    background-color: #088761;
+    /*height: 25px;*/
+    border:none;
+}
+
+.list{
+    list-style-type: none;
+    border: 1px solid #eee;
+    margin: 0;
+    padding: 0
+}
+
+.list li{
+    border-bottom: 1px solid #eee;
+    padding: 20px;
+    text-align: center;
+}
