@@ -85,3 +85,8 @@ h1{
     padding: 20px;
     text-align: center;
 }
+ul li.checked{
+    background: #888;
+    color: #fff;
+    text-decoration: line-through
+}
