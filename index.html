@@ -1,24 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Journal</title>
-    <link rel="stylesheet" href="index.css">
+    <title> Aloha! This is what I want to Accomplish Today</title>
+    <link rel="stylesheet" href="index.css" type =text/css>
 </head>
-
 <body>
-<h1 class="title">My Personal Journal</h1>
-<form id="entryForm">
-<textarea class ="entry-textbox" placeholder="Click here to start typing......" required></textarea>
- <br/>
-    <button class= "button" type = "submit"> Submit</button>
-</form>
-<section id ="entries">
-    <div class="entries-nav"></div>
+<header class="topHeader">
+    <h1>What needs to accomplished today?</h1>
+</header>
+
+<section  class = 'taskEntry'>
+    <form class = 'addTaskForm'>
+    <input class= "taskDescription" id="taskname" placeholder="What needs to be done?">
+    <button class= 'addTask' type="submit"> Add to the list</button>
+    </form>
 </section>
-<script src="index.js"></script>
+
+<section class ='taskDisplay'>
+    <div class = 'taskCategory'>
+        <div class = 'taskType'>
+            <div class = "catHeader" id="todoheader"> What's Next?</div>
+            <ul class = "todolist">
+
+            </ul>
+<!--            <button class= 'cleartodo' type="submit"> Clear List</button>-->
+        </div>
+    </div>
+    <div class = 'taskCategory'>
+        <div class ='taskType'>
+            <div class = "catHeader" id ="inprogressheader"> Progress Underway</div>
+            <ul class = "inprogresslist">
+
+            </ul>
+<!--            <button class= 'clearinprogress' type="submit"> Clear List</button>-->
+        </div>
+    </div>
+    <div class = 'taskCategory'>
+        <div class = "taskType">
+            <div class = "catHeader" id="finishedheader">Finished</div>
+                <ul class = "finishedlist">
+
+            </ul>
+            <button class= 'clearfinished' id = "clearfinished" type="submit"> Clear Memory</button>
+        </div>
+    </div>
+
+</section>
+
+
+
+<script src="script.js"></script>
 </body>
 </html>
