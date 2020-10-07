@@ -1,64 +1,83 @@
 body{
-    margin:5%,
-    font-family: 'Gill Sans','Gill Sans MT';
-    display:grid;
+    font-family: "Century Gothic";
+    margin:0;
+}
+
+.topHeader{
+    background-color: #383F51;
+    color:#48ACF0;
+    padding: 1em;
     justify-content: center;
 }
-.title{
-    color:#16697A;
-    text-align:center;
-    margin: auto auto 1em;
+h1{
+    margin:0px;
+}
+.taskEntry{
+    background-color: #48ACF0;
+}
+.addTaskForm{
+    padding:0.5em;
+    /*margin: 0.5em;*/
+}
+.taskDescription{
+    padding:1em;
+    margin: 2em auto;
+    width:80%;
+}
+.addTask{
+    border-radius: 0px;
+    padding:1em;
+    margin: 2em auto;
+    width: 15%;
 }
 
-.entry-textbox{
-    background-color: #FFA62B;
-    width:20em;
-    height:10em;
-    margin-bottom: 0.5em;
-    padding:2em;
-    border:unset;
-    border-radius:25px;
-    outline: none;
-}
-/*
-    - Give the entries section the background color, #16697A
-      (or any other color of your choice)
-    - Give it the text color, #EDE7E3
-      (if you used your own color, this should be something that is visible
-       on the background)
-    - Like we did before, give it rounded edges.*/
-#entries{
-    background-color: #16697A;
-    color:#EDE7E3;
-    padding:2em;
-    max-width: 20em;
-    border-radius: 25px;
-    margin-top: 1em;
-    font-family: cursive;
-}
-#entryForm .button{
-    border:unset;
-    border-radius: 25px;
-    padding:5px 16px;
-    margin-left:75%;
+.taskDisplay{
+    margin: 0 auto;
+    border:2px solid #EE6C1B;
 }
 
-/*
-   - Target the div for the display-entry buttons and give it a
-       bottom padding of 1em to separate it from the entry texts
-   - Target the display-entry buttons and give each of them a margin
-       of 0.2em to separate them from one another
-   - Use the hover pseudo-class to change the cursor on the
-       display-entry buttons to "pointer" whenever they are hovered on
-*/
-.entries-nav{
-    padding-bottom: 1em;
-
+.taskCategory {
+    float: left;
+    width: 32%;
+    padding: 0px;
+}
+.taskType{
+    margin :1em;
+    padding:0.25em;
 }
 
-.display-entry-button{
-    margin:0.2em;
+.taskType .catHeader{
+    font-family: "Century Gothic";
+    padding:10px;
+
 }
-.display-entry-button:hover{
-    cursor: pointer;
+/*Header CSS*/
+.taskType #todoheader{
+    background-color: #EE6C1B;
+    border:none;
 }
+
+.taskType #inprogressheader{
+    background-color: #AA7DCE;
+    border:none;
+}
+
+.taskType #finishedheader{
+    background-color: #088761;
+    border:none;
+}
+
+/*List item CSS*/
+ul{
+  padding-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.todolist,.inprogresslist,.finishedlist li{
+    list-style-type: list;
+    border: 0px solid #eee;
+    margin: 1em;
+    padding: 0em;
+}
+
